@@ -909,7 +909,8 @@ focusstack(const Arg *arg)
 	if (c) {
 		focus(c);
 		restack(selmon);
-		XWarpPointer(dpy, None, c->win, 0, 0, 0, 0, c->w/2, c->h/2);
+		if (selmon->lt[selmon->sellt]->arrange != monocle) /* Don't warp the pointer if we are in the monocle layout */
+			XWarpPointer(dpy, None, c->win, 0, 0, 0, 0, c->w/2, c->h/2);
 	}
 }
 
