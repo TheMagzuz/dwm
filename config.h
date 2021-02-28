@@ -91,6 +91,7 @@ static const char   *volumeupsmallcmd[] = { "change-main-volume", "+" SMALL_VOLU
 static const char *volumedownsmallcmd[] = { "change-main-volume", "-" SMALL_VOLUME_INCREMENT };
 
 static const char *mutecommand[] = { "mute-main" };
+static const char *playpausecommand[] = { "spotify-play-pause" };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -135,6 +136,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ 0, 											XF86XK_AudioRaiseVolume,  spawn, 				 {.v = volumeupsmallcmd } },
+	{ 0, 											XF86XK_AudioLowerVolume,  spawn, 				 {.v = volumedownsmallcmd } },
+	{ 0, 											XF86XK_AudioPlay,  spawn, 				 {.v = playpausecommand } },
 };
 
 /* button definitions */
