@@ -729,7 +729,7 @@ drawbar(Monitor *m)
 	Client *c;
 
 	/* draw status first so it can be overdrawn by tags later */
-	if (m == selmon) { /* status is only drawn on selected monitor */
+	if (m == selmon || 1) { /* status is only drawn on selected monitor */
 			char *stc = stextc;
 			char *stp = stextc;
 			char tmp;
@@ -778,7 +778,7 @@ drawbar(Monitor *m)
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
-	if (m == selmon) {
+	if (m == selmon || 1) {
 					blw = w, ble = x;
 					w = m->ww - wstext - x;
 	} else
@@ -1417,7 +1417,7 @@ restack(Monitor *m)
 	XEvent ev;
 	XWindowChanges wc;
 
-	drawbar(m);
+	drawbars();
 	if (!m->sel)
 		return;
 	if (m->sel->isfloating || !m->lt[m->sellt]->arrange)
@@ -1574,7 +1574,7 @@ setlayout(const Arg *arg)
 	if (selmon->sel)
 		arrange(selmon);
 	else
-		drawbar(selmon);
+		drawbars();
 }
 
 /* arg > 1.0 will set mfact absolutely */
@@ -2148,7 +2148,7 @@ updatestatus(void)
                 strcpy(stexts, stextc);
                 wstext = TTEXTW(stextc) + LSPAD + RSPAD;
         }
-        drawbar(selmon);
+		drawbars();
 }
 
 void
