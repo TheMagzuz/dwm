@@ -95,6 +95,8 @@ static const char *playpausecommand[] = { "spotify-play-pause" };
 
 static const char *cyclekeyboardcommand[] = { "cycle-kb" };
 
+static const char *selecticoncommand[] = { "select-char-to-clipboard" };
+
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -143,6 +145,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask, 						XK_bracketright, 	shifttag,   {.i = +1}},
 	{ MODKEY|ShiftMask, 						XK_bracketleft, 	shifttag,   {.i = -1}},
 	{ MODKEY, 											XK_c, 							spawn, 		{ .v = cyclekeyboardcommand}},
+	{ MODKEY, 											XK_e, 							spawn, 		{ .v = selecticoncommand }}, 
 	{ 0, 											XF86XK_AudioRaiseVolume,  spawn, 				 {.v = volumeupsmallcmd } },
 	{ 0, 											XF86XK_AudioLowerVolume,  spawn, 				 {.v = volumedownsmallcmd } },
 	{ 0, 											XF86XK_AudioPlay,  spawn, 				 {.v = playpausecommand } },
