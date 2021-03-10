@@ -103,6 +103,8 @@ static const char *spotifyprevcommand[] = { "spotify-skip-rewind", "1" };
 
 static const char *screenshotcommand[] = { "screenshot" };
 
+static const char *firefoxcommand[] = { "firefox" };
+
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -155,6 +157,7 @@ static Key keys[] = {
 	{ MODKEY, 											XK_F1, 							spawn, 		{ .v = spotifyprevcommand }},
 	{ MODKEY, 											XK_F2, 							spawn, 		{ .v = spotifynextcommand }},
 	{ MODKEY|ShiftMask, 						XK_s, 							spawn, 		{ .v = screenshotcommand }}, 
+	{ MODKEY|ShiftMask, 						XK_b, 							spawn, 		{ .v = firefoxcommand }}, 
 	{ 0, 											XF86XK_AudioRaiseVolume,  spawn, 				 {.v = volumeupsmallcmd } },
 	{ 0, 											XF86XK_AudioLowerVolume,  spawn, 				 {.v = volumedownsmallcmd } },
 	{ 0, 											XF86XK_AudioPlay,  spawn, 				 {.v = playpausecommand } },
