@@ -101,6 +101,8 @@ static const char *selecticoncommand[] = { "select-char-to-clipboard" };
 static const char *spotifynextcommand[] = { "spotify-skip-rewind" };
 static const char *spotifyprevcommand[] = { "spotify-skip-rewind", "1" };
 
+static const char *screenshotcommand[] = { "screenshot" };
+
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -152,6 +154,7 @@ static Key keys[] = {
 	{ MODKEY, 											XK_e, 							spawn, 		{ .v = selecticoncommand }}, 
 	{ MODKEY, 											XK_F1, 							spawn, 		{ .v = spotifyprevcommand }},
 	{ MODKEY, 											XK_F2, 							spawn, 		{ .v = spotifynextcommand }},
+	{ MODKEY|ShiftMask, 						XK_s, 							spawn, 		{ .v = screenshotcommand }}, 
 	{ 0, 											XF86XK_AudioRaiseVolume,  spawn, 				 {.v = volumeupsmallcmd } },
 	{ 0, 											XF86XK_AudioLowerVolume,  spawn, 				 {.v = volumedownsmallcmd } },
 	{ 0, 											XF86XK_AudioPlay,  spawn, 				 {.v = playpausecommand } },
