@@ -46,14 +46,19 @@ static const unsigned int alphas[][3]      = {
 /* tagging */
 static const char *tags[] = { "", "","爵", "", "5", "6", "7", "ﭮ", "" };
 
-static const Rule rules[] = {
+//static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	//[> class      instance    title       tags mask     isfloating   monitor <]
+	//{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	//{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+//};
+
+static const Rule rules[] = {
+	{ "discord", 		NULL, 		 	NULL, 			1 << 7, 			0, 						-1 },
+	{ "st", 				NULL, 			"spt", 			1 << 8, 			0, 						-1 },
 };
 
 /* layout(s) */
@@ -86,24 +91,24 @@ static const char *termcmd[]  = { "st" , NULL };
 
 #define LARGE_VOLUME_INCREMENT "5"
 #define SMALL_VOLUME_INCREMENT "1"
-static const char   *volumeuplargecmd[] = { "change-main-volume", "+" LARGE_VOLUME_INCREMENT };
-static const char *volumedownlargecmd[] = { "change-main-volume", "-" LARGE_VOLUME_INCREMENT };
-static const char   *volumeupsmallcmd[] = { "change-main-volume", "+" SMALL_VOLUME_INCREMENT };
-static const char *volumedownsmallcmd[] = { "change-main-volume", "-" SMALL_VOLUME_INCREMENT };
+static const char   *volumeuplargecmd[] = { "change-main-volume", "+" LARGE_VOLUME_INCREMENT, NULL };
+static const char *volumedownlargecmd[] = { "change-main-volume", "-" LARGE_VOLUME_INCREMENT, NULL };
+static const char   *volumeupsmallcmd[] = { "change-main-volume", "+" SMALL_VOLUME_INCREMENT, NULL };
+static const char *volumedownsmallcmd[] = { "change-main-volume", "-" SMALL_VOLUME_INCREMENT, NULL };
 
-static const char *mutecommand[] = { "mute-main" };
-static const char *playpausecommand[] = { "spotify-play-pause" };
+static const char *mutecommand[] = { "mute-main", NULL };
+static const char *playpausecommand[] = { "spotify-play-pause", NULL };
 
-static const char *cyclekeyboardcommand[] = { "cycle-kb" };
+static const char *cyclekeyboardcommand[] = { "cycle-kb", NULL };
 
-static const char *selecticoncommand[] = { "select-char-to-clipboard" };
+static const char *selecticoncommand[] = { "select-char-to-clipboard", NULL };
 
-static const char *spotifynextcommand[] = { "spotify-skip-rewind" };
-static const char *spotifyprevcommand[] = { "spotify-skip-rewind", "1" };
+static const char *spotifynextcommand[] = { "spotify-skip-rewind", NULL };
+static const char *spotifyprevcommand[] = { "spotify-skip-rewind", "1", NULL };
 
-static const char *screenshotcommand[] = { "screenshot" };
+static const char *screenshotcommand[] = { "screenshot", NULL };
 
-static const char *firefoxcommand[] = { "firefox" };
+static const char *firefoxcommand[] = { "firefox", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
