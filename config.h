@@ -109,13 +109,13 @@ static const char *spotifyprevcommand[] = { "spotify-skip-rewind", "1", NULL };
 static const char *screenshotcommand[] = { "screenshot", NULL };
 
 static const char *firefoxcommand[] = { "firefox", NULL };
+static const char *firefoxprivatecommand[] = {"firefox", "--private-window", NULL};
 
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -162,7 +162,8 @@ static Key keys[] = {
 	{ MODKEY, 											XK_F1, 							spawn, 		{ .v = spotifyprevcommand }},
 	{ MODKEY, 											XK_F2, 							spawn, 		{ .v = spotifynextcommand }},
 	{ MODKEY|ShiftMask, 						XK_s, 							spawn, 		{ .v = screenshotcommand }}, 
-	{ MODKEY|ShiftMask, 						XK_b, 							spawn, 		{ .v = firefoxcommand }}, 
+	{ MODKEY,                       XK_b,      					spawn,    { .v = firefoxcommand }},
+	{ MODKEY|ShiftMask, 						XK_b, 							spawn, 		{ .v = firefoxprivatecommand }}, 
 	{ 0, 											XF86XK_AudioRaiseVolume,  spawn, 				 {.v = volumeupsmallcmd } },
 	{ 0, 											XF86XK_AudioLowerVolume,  spawn, 				 {.v = volumedownsmallcmd } },
 	{ 0, 											XF86XK_AudioPlay,  spawn, 				 {.v = playpausecommand } },
