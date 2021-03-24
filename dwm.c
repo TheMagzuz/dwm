@@ -1713,8 +1713,6 @@ shifttag(const Arg *arg)
 	int count = 0;
 	int nextseltags, curseltags = selmon->tagset[selmon->seltags];
 
-	perror("Shifttag");
-
 	do {
 		if(i > 0) // left circular shift
 			nextseltags = (curseltags << i) | (curseltags >> (LENGTH(tags) - i));
@@ -1730,8 +1728,6 @@ shifttag(const Arg *arg)
 			}
 		i += arg->i;
 	} while (!visible && ++count < 10);
-
-	printf("Count: %d", count);
 
 	if (count < 10) {
 		a.i = nextseltags;
