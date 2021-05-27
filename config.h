@@ -58,7 +58,7 @@ static const char *tags[] = { "", "","爵", "", "5", "6", "7", "ﭮ", "
 
 static const Rule rules[] = {
 	{ "discord", 		NULL, 		 	NULL, 			1 << 7, 			0, 						-1 },
-	{ "st", 				NULL, 			"spt", 			1 << 8, 			0, 						-1 },
+	{ "spt", 				NULL, 			NULL, 			1 << 8, 			0, 						-1 },
 };
 
 /* layout(s) */
@@ -105,6 +105,8 @@ static const char *selecticoncommand[] = { "select-char-to-clipboard", NULL };
 
 static const char *spotifynextcommand[] = { "spotify-skip-rewind", NULL };
 static const char *spotifyprevcommand[] = { "spotify-skip-rewind", "1", NULL };
+
+static const char *spotifycommand[] = { "st", "-c", "spt", "-e", "spt", NULL };
 
 static const char *screenshotcommand[] = { "screenshot", NULL };
 
@@ -162,6 +164,7 @@ static Key keys[] = {
 	{ MODKEY, 											XK_F1, 							spawn, 		{ .v = spotifyprevcommand }},
 	{ MODKEY, 											XK_F2, 							spawn, 		{ .v = spotifynextcommand }},
 	{ MODKEY|ShiftMask, 						XK_s, 							spawn, 		{ .v = screenshotcommand }}, 
+	{ MODKEY, 											XK_s, 							spawn, 		{ .v = spotifycommand }}, 
 	{ MODKEY,                       XK_b,      					spawn,    { .v = firefoxcommand }},
 	{ MODKEY|ShiftMask, 						XK_b, 							spawn, 		{ .v = firefoxprivatecommand }}, 
 	{ 0, 											XF86XK_AudioRaiseVolume,  spawn, 				 {.v = volumeupsmallcmd } },
