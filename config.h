@@ -87,7 +87,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st" , NULL };
+static const char *termcmd[]  = { "kitty" , NULL };
+
 static const char scratchpadname[] = "calculator";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "50x20", "-e", "bc",  NULL };
 
@@ -108,7 +109,7 @@ static const char *selecticoncommand[] = { "select-char-to-clipboard", NULL };
 static const char *spotifynextcommand[] = { "spotify-skip-rewind", NULL };
 static const char *spotifyprevcommand[] = { "spotify-skip-rewind", "1", NULL };
 
-static const char *spotifycommand[] = { "st", "-c", "spt", "-e", "spt", NULL };
+static const char *spotifycommand[] = { "kitty", "-c", "spt", "-e", "spt", NULL };
 
 static const char *screenshotcommand[] = { "screenshot", NULL };
 
