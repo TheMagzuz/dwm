@@ -90,7 +90,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty" , NULL };
 
 static const char scratchpadname[] = "calculator";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "50x20", "-e", "bc",  NULL };
+static const char *scratchpadcalccmd[] = { "kitty", "-t", scratchpadname, "-g", "50x20", "-e", "bc",  NULL };
+static const char *scratchpadunitscmd[] = { "kitty", "-t", scratchpadname, "-g", "50x20", "-e", "units",  NULL };
 
 #define LARGE_VOLUME_INCREMENT "5"
 #define SMALL_VOLUME_INCREMENT "1"
@@ -122,7 +123,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcalccmd } },
+	{ MODKEY|ShiftMask,                       XK_grave,  togglescratch,  {.v = scratchpadunitscmd } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
