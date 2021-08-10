@@ -113,6 +113,7 @@ static const char *spotifyprevcommand[] = { "spotify-skip-rewind", "1", NULL };
 static const char *spotifycommand[] = { "kitty", "-c", "spt", "-e", "spt", NULL };
 
 static const char *screenshotcommand[] = { "screenshot", NULL };
+static const char *recordscreencommand[] = { "record-screen", NULL };
 
 static const char *firefoxcommand[] = { "firefox", NULL };
 static const char *firefoxprivatecommand[] = {"firefox", "--private-window", NULL};
@@ -171,6 +172,7 @@ static Key keys[] = {
 	{ MODKEY, 											XK_F1, 							spawn, 		{ .v = spotifyprevcommand }},
 	{ MODKEY, 											XK_F2, 							spawn, 		{ .v = spotifynextcommand }},
 	{ MODKEY|ShiftMask, 						XK_s, 							spawn, 		{ .v = screenshotcommand }}, 
+	{ MODKEY, 											XK_r, 							spawn, 		{ .v = recordscreencommand }}, 
 	{ MODKEY, 											XK_s, 							spawn, 		{ .v = spotifycommand }}, 
 	{ MODKEY,                       XK_b,      					spawn,    { .v = firefoxcommand }},
 	{ MODKEY|ShiftMask, 						XK_b, 							spawn, 		{ .v = firefoxprivatecommand }}, 
