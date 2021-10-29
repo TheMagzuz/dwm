@@ -89,9 +89,10 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-f", NULL };
 static const char *termcmd[]  = { "kitty" , NULL };
 
-static const char scratchpadname[] = "calculator";
-static const char *scratchpadcalccmd[] = { "kitty", "-t", scratchpadname, "-g", "50x20", "-e", "bc",  NULL };
-static const char *scratchpadunitscmd[] = { "kitty", "-t", scratchpadname, "-g", "50x20", "-e", "units",  NULL };
+static const char scratchpadname[] = "Scratchpad";
+
+static const char *scratchpadcalccmd[] =  { "st", "-t", scratchpadname, "-g", "50x20", "-e", "bc",    NULL };
+static const char *scratchpadunitscmd[] = { "st", "-t", scratchpadname, "-g", "50x20", "-e", "units", NULL };
 
 #define LARGE_VOLUME_INCREMENT "5"
 #define SMALL_VOLUME_INCREMENT "1"
