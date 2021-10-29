@@ -111,7 +111,7 @@ static const char *selecticoncommand[] = { "select-char-to-clipboard", NULL };
 static const char *spotifynextcommand[] = { "spotify-skip-rewind", NULL };
 static const char *spotifyprevcommand[] = { "spotify-skip-rewind", "1", NULL };
 
-static const char *spotifycommand[] = { "kitty", "-c", "spt", "-e", "spt", NULL };
+static const char *spotifycommand[] = { "kitty", "--name", "spt", "spt", NULL };
 
 static const char *screenshotcommand[] = { "screenshot", NULL };
 static const char *recordscreencommand[] = { "record-screen", NULL };
