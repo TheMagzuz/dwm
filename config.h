@@ -119,6 +119,8 @@ static const char *recordscreencommand[] = { "record-screen", NULL };
 static const char *firefoxcommand[] = { "firefox", NULL };
 static const char *firefoxprivatecommand[] = {"firefox", "--private-window", NULL};
 
+static const char *boomercommand[] = {"boomer", NULL};
+
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -177,6 +179,7 @@ static Key keys[] = {
 	{ MODKEY, 											XK_s, 							spawn, 		{ .v = spotifycommand }}, 
 	{ MODKEY,                       XK_b,      					spawn,    { .v = firefoxcommand }},
 	{ MODKEY|ShiftMask, 						XK_b, 							spawn, 		{ .v = firefoxprivatecommand }}, 
+	{ MODKEY,   										XK_z, 							spawn, 		{ .v = boomercommand }}, 
 	{ 0, 											XF86XK_AudioRaiseVolume,  spawn, 				 {.v = volumeupsmallcmd } },
 	{ 0, 											XF86XK_AudioLowerVolume,  spawn, 				 {.v = volumedownsmallcmd } },
 	{ 0, 											XF86XK_AudioPlay,  spawn, 				 {.v = playpausecommand } },
