@@ -179,6 +179,7 @@ static Key keys[] = {
 	{ MODKEY, 											XK_s, 							spawn, 		{ .v = spotifycommand }}, 
 	{ MODKEY,                       XK_b,      					spawn,    { .v = firefoxcommand }},
 	{ MODKEY|ShiftMask, 						XK_b, 							spawn, 		{ .v = firefoxprivatecommand }}, 
+	{ MODKEY|Mod1Mask, 						  XK_b, 							togglebar,{0}}, 
 	{ MODKEY,   										XK_z, 							spawn, 		{ .v = boomercommand }}, 
 	{ 0, 											XF86XK_AudioRaiseVolume,  spawn, 				 {.v = volumeupsmallcmd } },
 	{ 0, 											XF86XK_AudioLowerVolume,  spawn, 				 {.v = volumedownsmallcmd } },
