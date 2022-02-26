@@ -155,7 +155,7 @@ static Key keys[] = {
 	{ MODKEY, 											XK_minus,  spawn, 				 {.v = volumedownlargecmd } },
 	{ MODKEY|ShiftMask, 						XK_equal,  spawn, 				 {.v = volumeupsmallcmd } },
 	{ MODKEY|ShiftMask, 						XK_minus,  spawn, 				 {.v = volumedownsmallcmd } },
-	{ MODKEY,												XK_o, 		 spawn, 				 {.v =  mutecommand } },
+	{ MODKEY|ShiftMask,							XK_o, 		 spawn, 				 {.v =  mutecommand } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
